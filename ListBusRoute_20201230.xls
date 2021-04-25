@@ -1,0 +1,1697 @@
+<table class="table table-bordered table-hover table-route-bus" border-collpase="collpase" id="tblExport" cell-padding="2">		
+				<thead>
+					<tr>
+						<th style="font-size: 14px;width: 7%;border: 0.5pt solid black" class="ng-binding">Route Group</th>
+						<th style="font-size: 14px;width: 14%;border: 0.5pt solid black" class="ng-binding">Bus Route</th>
+						<th style="font-size: 14px;width: 5%;border: 0.5pt solid black" class="ng-binding">Bus Name</th>
+						<th style="font-size: 14px;width: 24%;border: 0.5pt solid black" class="ng-binding">Route detail</th>
+						<th style="font-size: 14px;width: 5%;border: 0.5pt solid black" class="ng-binding">Return time</th>
+						<th style="font-size: 14px;width: 15%;border: 0.5pt solid black" class="ng-binding">Pickup location</th>
+						<th style="font-size: 14px;width: 20%;border: 0.5pt solid black" class="ng-binding">Parking address</th>
+						<th style="font-size: 14px;width: 5%;border: 0.5pt solid black" class="ng-binding">Parking fee</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- ngRepeat: group in listAll --><tr ng-repeat-start="group in listAll" class="ng-scope" style="">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="5">
+							<span style="font-size: 14px; font-weight: bold" class="ng-binding">Tuyến 1</span>
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<a title="Click to view detail" ng-click="update(group.listGroupBus[0].id)" class="ng-binding">Lạc Long Quân</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							&nbsp;1.1
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<!-- ngRepeat: pickup in group.listGroupBus[0].listPickup --><span ng-repeat="pickup in group.listGroupBus[0].listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold;" class="ng-binding">07:35</span>
+								&nbsp;Trước cổng công ty khai thác cá Hồ Tây – ngõ 612 Lạc Long Quân&nbsp;
+							</span><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:35</span>&nbsp;
+							Trước cổng công ty khai thác cá Hồ Tây – ngõ 612 Lạc Long Quân
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Trong sân của công ty khai thác cá Hồ Tây</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">10000</td>
+					</tr>			
+					<!-- ngRepeat: pickup in group.listGroupBus[0].listPickup --><!-- ngIf: !$first && group.listGroupBus[0].listPickup.length > 1 --><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup -->
+					<!-- ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 --><tr ng-repeat-start="bus in group.listGroupBus" ng-if="!$first &amp;&amp; group.listGroupBus.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<a title="Click to view detail" ng-click="update(bus.id)" class="ng-binding">Công viên Nghĩa Đô</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							&nbsp;1.2 / 1.6
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<!-- ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:45</span>
+								&nbsp;Công viên Nghĩa Đô&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+						 	<span style="color: red; font-weight: bold;" class="ng-binding">07:45</span>&nbsp;
+						 	Công viên Nghĩa Đô
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi gửi xe cổng công viên</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 --><tr ng-repeat-start="bus in group.listGroupBus" ng-if="!$first &amp;&amp; group.listGroupBus.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<a title="Click to view detail" ng-click="update(bus.id)" class="ng-binding">Công viên Hòa Bình</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							&nbsp;1.3 / 1.4
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<!-- ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:40</span>
+								&nbsp;Công viên Hòa Bình&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+						 	<span style="color: red; font-weight: bold;" class="ng-binding">07:40</span>&nbsp;
+						 	Công viên Hòa Bình
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi gửi xe Công viên Hòa Bình</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 --><tr ng-repeat-start="bus in group.listGroupBus" ng-if="!$first &amp;&amp; group.listGroupBus.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<a title="Click to view detail" ng-click="update(bus.id)" class="ng-binding">Mê Linh - KCN Thăng Long</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							&nbsp;1.5
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<!-- ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:15</span>
+								&nbsp;Mê Linh plaza&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:30</span>
+								&nbsp;KCN Canon - Thăng Long&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+						 	<span style="color: red; font-weight: bold;" class="ng-binding">07:15</span>&nbsp;
+						 	Mê Linh plaza
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi gửi xe  Melinh hoặc tự túc quanh đó</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><tr ng-repeat="pickup in bus.listPickup" ng-if="!$parent.$first &amp;&amp; !$first &amp;&amp; bus.listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:30</span>&nbsp;
+							KCN Canon - Thăng Long
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							Bãi đỗ xe KCN Thăng Long
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							5000
+						</td>
+					</tr><!-- end ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus -->
+					<!-- ngIf: false --><!-- end ngRepeat: group in listAll --><tr ng-repeat-start="group in listAll" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="5">
+							<span style="font-size: 14px; font-weight: bold" class="ng-binding">Tuyến 2</span>
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<a title="Click to view detail" ng-click="update(group.listGroupBus[0].id)" class="ng-binding">Thủ Lệ - Song Phương</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							&nbsp;2.1
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<!-- ngRepeat: pickup in group.listGroupBus[0].listPickup --><span ng-repeat="pickup in group.listGroupBus[0].listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold;" class="ng-binding">07:45</span>
+								&nbsp;Công viên Thủ Lệ&nbsp;
+							</span><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup --><span ng-repeat="pickup in group.listGroupBus[0].listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold;" class="ng-binding">08:05</span>
+								&nbsp;Song Phương - Đại lộ Thăng Long&nbsp;
+							</span><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:45</span>&nbsp;
+							Công viên Thủ Lệ
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi gửi xe cổng công viên</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr>			
+					<!-- ngRepeat: pickup in group.listGroupBus[0].listPickup --><!-- ngIf: !$first && group.listGroupBus[0].listPickup.length > 1 --><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup --><!-- ngIf: !$first && group.listGroupBus[0].listPickup.length > 1 --><tr ng-repeat="pickup in group.listGroupBus[0].listPickup" ng-if="!$first &amp;&amp; group.listGroupBus[0].listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">08:05</span>&nbsp;
+							Song Phương - Đại lộ Thăng Long
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							Tự túc gửi xe nhà dân
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							0
+						</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus[0].listPickup.length > 1 --><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup -->
+					<!-- ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 --><tr ng-repeat-start="bus in group.listGroupBus" ng-if="!$first &amp;&amp; group.listGroupBus.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<a title="Click to view detail" ng-click="update(bus.id)" class="ng-binding">Thủ Lệ</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							&nbsp;2.2
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<!-- ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:45</span>
+								&nbsp;Công viên Thủ Lệ&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+						 	<span style="color: red; font-weight: bold;" class="ng-binding">07:45</span>&nbsp;
+						 	Công viên Thủ Lệ
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi gửi xe cổng công viên</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 --><tr ng-repeat-start="bus in group.listGroupBus" ng-if="!$first &amp;&amp; group.listGroupBus.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<a title="Click to view detail" ng-click="update(bus.id)" class="ng-binding">Cửa Bắc - Kim Mã</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							&nbsp;2.4
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<!-- ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:25</span>
+								&nbsp;Cửa Bắc - Ba Đình&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:35</span>
+								&nbsp;Kim Mã - Ba Đình&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+						 	<span style="color: red; font-weight: bold;" class="ng-binding">07:25</span>&nbsp;
+						 	Cửa Bắc - Ba Đình
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi gửi xe tòa nhà EVN</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><tr ng-repeat="pickup in bus.listPickup" ng-if="!$parent.$first &amp;&amp; !$first &amp;&amp; bus.listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:35</span>&nbsp;
+							Kim Mã - Ba Đình
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							Bãi gửi xe 63 Giang Văn Minh
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							5000
+						</td>
+					</tr><!-- end ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus -->
+					<!-- ngIf: false --><!-- end ngRepeat: group in listAll --><tr ng-repeat-start="group in listAll" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="10">
+							<span style="font-size: 14px; font-weight: bold" class="ng-binding">Tuyến 3</span>
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="3">
+							<a title="Click to view detail" ng-click="update(group.listGroupBus[0].id)" class="ng-binding">Cổ Loa - Thiên Đức</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="3">
+							&nbsp;3.1
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="3">
+							<!-- ngRepeat: pickup in group.listGroupBus[0].listPickup --><span ng-repeat="pickup in group.listGroupBus[0].listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold;" class="ng-binding">07:05</span>
+								&nbsp;Bãi đỗ xe Cổ Loa&nbsp;
+							</span><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup --><span ng-repeat="pickup in group.listGroupBus[0].listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold;" class="ng-binding">07:15</span>
+								&nbsp;Ngã ba Thiên Đức, tt. Yên Viên, Gia Lâm&nbsp;
+							</span><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup --><span ng-repeat="pickup in group.listGroupBus[0].listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold;" class="ng-binding">07:20</span>
+								&nbsp;Bến xe Bus chân Cầu Đuống (1075 Ngô Gia Tự)&nbsp;
+							</span><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="3" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:05</span>&nbsp;
+							Bãi đỗ xe Cổ Loa
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi đỗ xe Cổ Loa</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr>			
+					<!-- ngRepeat: pickup in group.listGroupBus[0].listPickup --><!-- ngIf: !$first && group.listGroupBus[0].listPickup.length > 1 --><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup --><!-- ngIf: !$first && group.listGroupBus[0].listPickup.length > 1 --><tr ng-repeat="pickup in group.listGroupBus[0].listPickup" ng-if="!$first &amp;&amp; group.listGroupBus[0].listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:15</span>&nbsp;
+							Ngã ba Thiên Đức, tt. Yên Viên, Gia Lâm
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							Tự túc
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							0
+						</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus[0].listPickup.length > 1 --><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup --><!-- ngIf: !$first && group.listGroupBus[0].listPickup.length > 1 --><tr ng-repeat="pickup in group.listGroupBus[0].listPickup" ng-if="!$first &amp;&amp; group.listGroupBus[0].listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:20</span>&nbsp;
+							Bến xe Bus chân Cầu Đuống (1075 Ngô Gia Tự)
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							Tự túc
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							0
+						</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus[0].listPickup.length > 1 --><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup -->
+					<!-- ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 --><tr ng-repeat-start="bus in group.listGroupBus" ng-if="!$first &amp;&amp; group.listGroupBus.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="3">
+							<a title="Click to view detail" ng-click="update(bus.id)" class="ng-binding">Phú Thụy - Đặng Xá - Trâu Quỳ</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="3">
+							&nbsp;3.2
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="3">
+							<!-- ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:15</span>
+								&nbsp;Cầu vượt Phú Thụy&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:20</span>
+								&nbsp;Cổng khu đô thị Đặng Xá&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:25</span>
+								&nbsp;Ngã ba Trâu Quỳ&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="3" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+						 	<span style="color: red; font-weight: bold;" class="ng-binding">07:15</span>&nbsp;
+						 	Cầu vượt Phú Thụy
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Tự túc</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">0</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><tr ng-repeat="pickup in bus.listPickup" ng-if="!$parent.$first &amp;&amp; !$first &amp;&amp; bus.listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:20</span>&nbsp;
+							Cổng khu đô thị Đặng Xá
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							Bãi gửi xe khu chung cư Đặng Xá
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							5000
+						</td>
+					</tr><!-- end ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><tr ng-repeat="pickup in bus.listPickup" ng-if="!$parent.$first &amp;&amp; !$first &amp;&amp; bus.listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:25</span>&nbsp;
+							Ngã ba Trâu Quỳ
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							Tự túc gửi xe
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							0
+						</td>
+					</tr><!-- end ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 --><tr ng-repeat-start="bus in group.listGroupBus" ng-if="!$first &amp;&amp; group.listGroupBus.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<a title="Click to view detail" ng-click="update(bus.id)" class="ng-binding">Long Biên</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							&nbsp;3.3
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<!-- ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:20</span>
+								&nbsp;gần cổng Media mart Long Biên&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+						 	<span style="color: red; font-weight: bold;" class="ng-binding">07:20</span>&nbsp;
+						 	gần cổng Media mart Long Biên
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi gửi xe Media mart</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">10000</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 --><tr ng-repeat-start="bus in group.listGroupBus" ng-if="!$first &amp;&amp; group.listGroupBus.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="3">
+							<a title="Click to view detail" ng-click="update(bus.id)" class="ng-binding">Ecopark</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="3">
+							&nbsp;3.4
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="3">
+							<!-- ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:10</span>
+								&nbsp;Ngã tư Văn Giang, Văn Giang, Hưng Yên&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:20</span>
+								&nbsp;Ngã tư Ecopark (gần tảng đá cầu Bắc Hưng Hải)&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:35</span>
+								&nbsp;Chân cầu Thanh Trì - Lĩnh Nam&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="3" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+						 	<span style="color: red; font-weight: bold;" class="ng-binding">07:10</span>&nbsp;
+						 	Ngã tư Văn Giang, Văn Giang, Hưng Yên
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi gửi xe siêu thị Thành Đô</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><tr ng-repeat="pickup in bus.listPickup" ng-if="!$parent.$first &amp;&amp; !$first &amp;&amp; bus.listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:20</span>&nbsp;
+							Ngã tư Ecopark (gần tảng đá cầu Bắc Hưng Hải)
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							Tự túc gửi xe vào các tòa chung cư
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							0
+						</td>
+					</tr><!-- end ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><tr ng-repeat="pickup in bus.listPickup" ng-if="!$parent.$first &amp;&amp; !$first &amp;&amp; bus.listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:35</span>&nbsp;
+							Chân cầu Thanh Trì - Lĩnh Nam
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							Bãi gửi xe số 1 Thúy Lĩnh
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							5000
+						</td>
+					</tr><!-- end ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus -->
+					<!-- ngIf: false --><!-- end ngRepeat: group in listAll --><tr ng-repeat-start="group in listAll" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="4">
+							<span style="font-size: 14px; font-weight: bold" class="ng-binding">Tuyến 4</span>
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<a title="Click to view detail" ng-click="update(group.listGroupBus[0].id)" class="ng-binding">Bách Khoa</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							&nbsp;4.1 / 4.2 / 4.6
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<!-- ngRepeat: pickup in group.listGroupBus[0].listPickup --><span ng-repeat="pickup in group.listGroupBus[0].listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold;" class="ng-binding">07:20</span>
+								&nbsp;Cổng trường Đại học Bách Khoa&nbsp;
+							</span><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:20</span>&nbsp;
+							Cổng trường Đại học Bách Khoa
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi gửi xe trong trường</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr>			
+					<!-- ngRepeat: pickup in group.listGroupBus[0].listPickup --><!-- ngIf: !$first && group.listGroupBus[0].listPickup.length > 1 --><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup -->
+					<!-- ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 --><tr ng-repeat-start="bus in group.listGroupBus" ng-if="!$first &amp;&amp; group.listGroupBus.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<a title="Click to view detail" ng-click="update(bus.id)" class="ng-binding">Cầu Dậu</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							&nbsp;4.3
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<!-- ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:35</span>
+								&nbsp;Viện kiểm định Vacxin - Cầu Dậu&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+						 	<span style="color: red; font-weight: bold;" class="ng-binding">07:35</span>&nbsp;
+						 	Viện kiểm định Vacxin - Cầu Dậu
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi gửi xe chung cư Kim Văn - Kim Lũ</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 --><tr ng-repeat-start="bus in group.listGroupBus" ng-if="!$first &amp;&amp; group.listGroupBus.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<a title="Click to view detail" ng-click="update(bus.id)" class="ng-binding">Linh Đàm</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							&nbsp;4.4
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<!-- ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:30</span>
+								&nbsp;Bán đảo Linh Đàm - Tòa nhà HH3B&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+						 	<span style="color: red; font-weight: bold;" class="ng-binding">07:30</span>&nbsp;
+						 	Bán đảo Linh Đàm - Tòa nhà HH3B
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi gửi xe toàn nhà HH3B</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 --><tr ng-repeat-start="bus in group.listGroupBus" ng-if="!$first &amp;&amp; group.listGroupBus.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<a title="Click to view detail" ng-click="update(bus.id)" class="ng-binding">Trần Thù Độ - Pháp Vân</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							&nbsp;4.5
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<!-- ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:35</span>
+								&nbsp;Pháp Vân - Trần Thủ Độ (Đối diện tòa Nơ 4)&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+						 	<span style="color: red; font-weight: bold;" class="ng-binding">07:35</span>&nbsp;
+						 	Pháp Vân - Trần Thủ Độ (Đối diện tòa Nơ 4)
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi gửi xe tòa nhà N4 Trần Thù Độ</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus -->
+					<!-- ngIf: false --><!-- end ngRepeat: group in listAll --><tr ng-repeat-start="group in listAll" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="20">
+							<span style="font-size: 14px; font-weight: bold" class="ng-binding">Tuyến 5</span>
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<a title="Click to view detail" ng-click="update(group.listGroupBus[0].id)" class="ng-binding">Làng Việt kiều Châu Âu</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							&nbsp;5.1
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<!-- ngRepeat: pickup in group.listGroupBus[0].listPickup --><span ng-repeat="pickup in group.listGroupBus[0].listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold;" class="ng-binding">07:35</span>
+								&nbsp;Làng Việt kiều Châu Âu - Thành Phát Moto&nbsp;
+							</span><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup --><span ng-repeat="pickup in group.listGroupBus[0].listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold;" class="ng-binding">07:37</span>
+								&nbsp;Điện máy Trần Anh - Mỗ Lao&nbsp;
+							</span><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:35</span>&nbsp;
+							Làng Việt kiều Châu Âu - Thành Phát Moto
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi gửi xe tòa nhà TSQ</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr>			
+					<!-- ngRepeat: pickup in group.listGroupBus[0].listPickup --><!-- ngIf: !$first && group.listGroupBus[0].listPickup.length > 1 --><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup --><!-- ngIf: !$first && group.listGroupBus[0].listPickup.length > 1 --><tr ng-repeat="pickup in group.listGroupBus[0].listPickup" ng-if="!$first &amp;&amp; group.listGroupBus[0].listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:37</span>&nbsp;
+							Điện máy Trần Anh - Mỗ Lao
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							Hầm BigC Trần Phú, Mỗ Lao Hà Đông
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							5000
+						</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus[0].listPickup.length > 1 --><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup -->
+					<!-- ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 --><tr ng-repeat-start="bus in group.listGroupBus" ng-if="!$first &amp;&amp; group.listGroupBus.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="3">
+							<a title="Click to view detail" ng-click="update(bus.id)" class="ng-binding">Chương Mỹ - Xuân Mai</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="3">
+							&nbsp;5.10
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="3">
+							<!-- ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:30</span>
+								&nbsp;Chung cư Lộc Ninh - Chúc Sơn&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:40</span>
+								&nbsp;khu CN Phú Nghĩa - Chương Mỹ (Lối rẽ vào trường ĐH Đông Đô)&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">08:00</span>
+								&nbsp;ĐH Lâm nghiệp - Xuân Mai&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="3" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+						 	<span style="color: red; font-weight: bold;" class="ng-binding">07:30</span>&nbsp;
+						 	Chung cư Lộc Ninh - Chúc Sơn
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi gửi xe hầm tòa chung cư</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><tr ng-repeat="pickup in bus.listPickup" ng-if="!$parent.$first &amp;&amp; !$first &amp;&amp; bus.listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:40</span>&nbsp;
+							khu CN Phú Nghĩa - Chương Mỹ (Lối rẽ vào trường ĐH Đông Đô)
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							Gửi xe trong trường ĐH Đông Đô
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							5000
+						</td>
+					</tr><!-- end ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><tr ng-repeat="pickup in bus.listPickup" ng-if="!$parent.$first &amp;&amp; !$first &amp;&amp; bus.listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">08:00</span>&nbsp;
+							ĐH Lâm nghiệp - Xuân Mai
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							trường ĐH Lâm nghiệp
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							5000
+						</td>
+					</tr><!-- end ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 --><tr ng-repeat-start="bus in group.listGroupBus" ng-if="!$first &amp;&amp; group.listGroupBus.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<a title="Click to view detail" ng-click="update(bus.id)" class="ng-binding">Làng Việt Kiều</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							&nbsp;5.2
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<!-- ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:35</span>
+								&nbsp;Làng Việt kiều Châu Âu - Thành Phát Moto&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:37</span>
+								&nbsp;Điện máy Trần Anh - Mỗ Lao&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+						 	<span style="color: red; font-weight: bold;" class="ng-binding">07:35</span>&nbsp;
+						 	Làng Việt kiều Châu Âu - Thành Phát Moto
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi gửi xe tòa nhà TSQ</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><tr ng-repeat="pickup in bus.listPickup" ng-if="!$parent.$first &amp;&amp; !$first &amp;&amp; bus.listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:37</span>&nbsp;
+							Điện máy Trần Anh - Mỗ Lao
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							Hầm BigC Trần Phú, Mỗ Lao Hà Đông
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							5000
+						</td>
+					</tr><!-- end ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 --><tr ng-repeat-start="bus in group.listGroupBus" ng-if="!$first &amp;&amp; group.listGroupBus.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<a title="Click to view detail" ng-click="update(bus.id)" class="ng-binding">Hà Đông (Ngô Thì Nhậm)</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							&nbsp;5.3 / 5.6
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<!-- ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:45</span>
+								&nbsp;CT1,2 Ngô Thì Nhậm&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+						 	<span style="color: red; font-weight: bold;" class="ng-binding">07:45</span>&nbsp;
+						 	CT1,2 Ngô Thì Nhậm
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Hầm gửi xe chung cư</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 --><tr ng-repeat-start="bus in group.listGroupBus" ng-if="!$first &amp;&amp; group.listGroupBus.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<a title="Click to view detail" ng-click="update(bus.id)" class="ng-binding">Hà Đông (Xa La - Gemek)</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							&nbsp;5.4
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<!-- ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:40</span>
+								&nbsp;CT4C Xa La&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">08:00</span>
+								&nbsp;Đối diện Gemek tower 1&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+						 	<span style="color: red; font-weight: bold;" class="ng-binding">07:40</span>&nbsp;
+						 	CT4C Xa La
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi gửi xe chung cư</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><tr ng-repeat="pickup in bus.listPickup" ng-if="!$parent.$first &amp;&amp; !$first &amp;&amp; bus.listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">08:00</span>&nbsp;
+							Đối diện Gemek tower 1
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							Bãi gửi xe tòa nhà Gemek
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							5000
+						</td>
+					</tr><!-- end ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 --><tr ng-repeat-start="bus in group.listGroupBus" ng-if="!$first &amp;&amp; group.listGroupBus.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<a title="Click to view detail" ng-click="update(bus.id)" class="ng-binding">Hà Đông - Dương Nội</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							&nbsp;5.5
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<!-- ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:45</span>
+								&nbsp;The Sparks - Cổng KĐT Dương Nội&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:47</span>
+								&nbsp;Gầm cầu vượt The Sparks Dương Nội (chiều trả về 1 điểm cổng The Sparks)&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+						 	<span style="color: red; font-weight: bold;" class="ng-binding">07:45</span>&nbsp;
+						 	The Sparks - Cổng KĐT Dương Nội
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Hầm gửi xe chung cư</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><tr ng-repeat="pickup in bus.listPickup" ng-if="!$parent.$first &amp;&amp; !$first &amp;&amp; bus.listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:47</span>&nbsp;
+							Gầm cầu vượt The Sparks Dương Nội (chiều trả về 1 điểm cổng The Sparks)
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							0
+						</td>
+					</tr><!-- end ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 --><tr ng-repeat-start="bus in group.listGroupBus" ng-if="!$first &amp;&amp; group.listGroupBus.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="3">
+							<a title="Click to view detail" ng-click="update(bus.id)" class="ng-binding">Hà Đông (Dương Nội - Gemek)</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="3">
+							&nbsp;5.5 Tăng cường
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="3">
+							<!-- ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:45</span>
+								&nbsp;The Sparks - Cổng KĐT Dương Nội&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:47</span>
+								&nbsp;Gầm cầu vượt The Sparks Dương Nội (chiều trả về 1 điểm cổng The Sparks)&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">08:00</span>
+								&nbsp;Đối diện Gemek tower 1&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="3" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+						 	<span style="color: red; font-weight: bold;" class="ng-binding">07:45</span>&nbsp;
+						 	The Sparks - Cổng KĐT Dương Nội
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Hầm gửi xe chung cư</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><tr ng-repeat="pickup in bus.listPickup" ng-if="!$parent.$first &amp;&amp; !$first &amp;&amp; bus.listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:47</span>&nbsp;
+							Gầm cầu vượt The Sparks Dương Nội (chiều trả về 1 điểm cổng The Sparks)
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							0
+						</td>
+					</tr><!-- end ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><tr ng-repeat="pickup in bus.listPickup" ng-if="!$parent.$first &amp;&amp; !$first &amp;&amp; bus.listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">08:00</span>&nbsp;
+							Đối diện Gemek tower 1
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							Bãi gửi xe tòa nhà Gemek
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							5000
+						</td>
+					</tr><!-- end ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 --><tr ng-repeat-start="bus in group.listGroupBus" ng-if="!$first &amp;&amp; group.listGroupBus.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<a title="Click to view detail" ng-click="update(bus.id)" class="ng-binding">Hà Đông (Xa La - Bảo Sơn)</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							&nbsp;5.7
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<!-- ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:40</span>
+								&nbsp;CT4C Xa La&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:55</span>
+								&nbsp;Tòa nhà ICID, Lô C mặt đường Lê Trọng Tấn, Hà Đông&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+						 	<span style="color: red; font-weight: bold;" class="ng-binding">07:40</span>&nbsp;
+						 	CT4C Xa La
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi gửi xe chung cư</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><tr ng-repeat="pickup in bus.listPickup" ng-if="!$parent.$first &amp;&amp; !$first &amp;&amp; bus.listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:55</span>&nbsp;
+							Tòa nhà ICID, Lô C mặt đường Lê Trọng Tấn, Hà Đông
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							Gửi xe hầm tòa nhà ICID
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							5000
+						</td>
+					</tr><!-- end ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 --><tr ng-repeat-start="bus in group.listGroupBus" ng-if="!$first &amp;&amp; group.listGroupBus.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<a title="Click to view detail" ng-click="update(bus.id)" class="ng-binding">Hà Đông (Văn Phú -  Gemek)</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							&nbsp;5.8
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<!-- ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:45</span>
+								&nbsp;Tòa nhà Victoria Văn Phú (đầu ngõ 24)&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">08:00</span>
+								&nbsp;Đối diện Gemek tower 1&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+						 	<span style="color: red; font-weight: bold;" class="ng-binding">07:45</span>&nbsp;
+						 	Tòa nhà Victoria Văn Phú (đầu ngõ 24)
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi gửi xe chung cư Victoria</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><tr ng-repeat="pickup in bus.listPickup" ng-if="!$parent.$first &amp;&amp; !$first &amp;&amp; bus.listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">08:00</span>&nbsp;
+							Đối diện Gemek tower 1
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							Bãi gửi xe tòa nhà Gemek
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							5000
+						</td>
+					</tr><!-- end ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 --><tr ng-repeat-start="bus in group.listGroupBus" ng-if="!$first &amp;&amp; group.listGroupBus.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<a title="Click to view detail" ng-click="update(bus.id)" class="ng-binding">Trước tòa Gemek Tower 1</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							&nbsp;5.9
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<!-- ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">08:00</span>
+								&nbsp;Gemek Tower 1&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+						 	<span style="color: red; font-weight: bold;" class="ng-binding">08:00</span>&nbsp;
+						 	Gemek Tower 1
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Gửi xe hầm tòa nhà Gemek</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus -->
+					<!-- ngIf: false --><!-- end ngRepeat: group in listAll --><tr ng-repeat-start="group in listAll" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="8">
+							<span style="font-size: 14px; font-weight: bold" class="ng-binding">Tuyến 6</span>
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<a title="Click to view detail" ng-click="update(group.listGroupBus[0].id)" class="ng-binding">Bưu chính Viễn Thông (PTIT)</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							&nbsp;6.10
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<!-- ngRepeat: pickup in group.listGroupBus[0].listPickup --><span ng-repeat="pickup in group.listGroupBus[0].listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold;" class="ng-binding">07:40</span>
+								&nbsp;Học viện Công nghệ Bưu chính Viễn thông - PTIT&nbsp;
+							</span><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:40</span>&nbsp;
+							Học viện Công nghệ Bưu chính Viễn thông - PTIT
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Gửi xe trong trường PTIT</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr>			
+					<!-- ngRepeat: pickup in group.listGroupBus[0].listPickup --><!-- ngIf: !$first && group.listGroupBus[0].listPickup.length > 1 --><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup -->
+					<!-- ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 --><tr ng-repeat-start="bus in group.listGroupBus" ng-if="!$first &amp;&amp; group.listGroupBus.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<a title="Click to view detail" ng-click="update(bus.id)" class="ng-binding">Láng Hạ - Hoàng Minh Giám</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							&nbsp;6.2
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<!-- ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:45</span>
+								&nbsp;105 Láng Hạ (gần Ford)&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">08:00</span>
+								&nbsp;Cổng trường Amsterdam&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2" class="ng-binding">17:40</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+						 	<span style="color: red; font-weight: bold;" class="ng-binding">07:45</span>&nbsp;
+						 	105 Láng Hạ (gần Ford)
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi gửi xe 99 và 105 Láng hạ</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><tr ng-repeat="pickup in bus.listPickup" ng-if="!$parent.$first &amp;&amp; !$first &amp;&amp; bus.listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">08:00</span>&nbsp;
+							Cổng trường Amsterdam
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							gửi xe trong trường Am hoặc bãi xe lân cận đó
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							10000
+						</td>
+					</tr><!-- end ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 --><tr ng-repeat-start="bus in group.listGroupBus" ng-if="!$first &amp;&amp; group.listGroupBus.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<a title="Click to view detail" ng-click="update(bus.id)" class="ng-binding">Hoàng Minh Giám</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							&nbsp;6.3
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<!-- ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">08:00</span>
+								&nbsp;Grand plaza - đường Hoàng Minh Giám&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1" class="ng-binding">17:40</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+						 	<span style="color: red; font-weight: bold;" class="ng-binding">08:00</span>&nbsp;
+						 	Grand plaza - đường Hoàng Minh Giám
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi gửi xe cổng trường Amsterdam</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 --><tr ng-repeat-start="bus in group.listGroupBus" ng-if="!$first &amp;&amp; group.listGroupBus.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<a title="Click to view detail" ng-click="update(bus.id)" class="ng-binding">ĐH Nhân Văn</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							&nbsp;6.4 / 6.5
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<!-- ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:50</span>
+								&nbsp;Cổng Đại học Khoa học Xã hội &amp; Nhân văn&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+						 	<span style="color: red; font-weight: bold;" class="ng-binding">07:50</span>&nbsp;
+						 	Cổng Đại học Khoa học Xã hội &amp; Nhân văn
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi gửi xe trường đại học</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 --><tr ng-repeat-start="bus in group.listGroupBus" ng-if="!$first &amp;&amp; group.listGroupBus.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<a title="Click to view detail" ng-click="update(bus.id)" class="ng-binding">Mipec</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							&nbsp;6.6 / 6.7
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<!-- ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:50</span>
+								&nbsp;Mipec Tower - đi quá lên 20m chỗ Tổng đại lí xổ số Hà Nội 18&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+						 	<span style="color: red; font-weight: bold;" class="ng-binding">07:50</span>&nbsp;
+						 	Mipec Tower - đi quá lên 20m chỗ Tổng đại lí xổ số Hà Nội 18
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi gửi xe tòa nhà Mipec</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 --><tr ng-repeat-start="bus in group.listGroupBus" ng-if="!$first &amp;&amp; group.listGroupBus.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<a title="Click to view detail" ng-click="update(bus.id)" class="ng-binding">ĐH Hà Nội</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							&nbsp;6.9
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<!-- ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:40</span>
+								&nbsp;Trường Đại học Hà Nội&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:43</span>
+								&nbsp;Học viện Công nghệ Bưu chính Viễn thông - PTIT&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+						 	<span style="color: red; font-weight: bold;" class="ng-binding">07:40</span>&nbsp;
+						 	Trường Đại học Hà Nội
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi gửi xe ĐH Hà Nội (đi vào ngõ cách mặt đường Nguyễn Trãi 100m)</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><tr ng-repeat="pickup in bus.listPickup" ng-if="!$parent.$first &amp;&amp; !$first &amp;&amp; bus.listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:43</span>&nbsp;
+							Học viện Công nghệ Bưu chính Viễn thông - PTIT
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							Gửi xe trong trường PTIT
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							5000
+						</td>
+					</tr><!-- end ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus -->
+					<!-- ngIf: false --><!-- end ngRepeat: group in listAll --><tr ng-repeat-start="group in listAll" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<span style="font-size: 14px; font-weight: bold" class="ng-binding">Tuyến 7</span>
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<a title="Click to view detail" ng-click="update(group.listGroupBus[0].id)" class="ng-binding">Cây xăng Mai dịch 2</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							&nbsp;7.1 / 7.2
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<!-- ngRepeat: pickup in group.listGroupBus[0].listPickup --><span ng-repeat="pickup in group.listGroupBus[0].listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold;" class="ng-binding">07:55</span>
+								&nbsp;Đối diện Cây xăng dầu Mai Dịch 2&nbsp;
+							</span><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1" class="ng-binding">17:40</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:55</span>&nbsp;
+							Đối diện Cây xăng dầu Mai Dịch 2
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi gửi xe canh cây xăng dầu Mai Dịch 2</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">7000</td>
+					</tr>			
+					<!-- ngRepeat: pickup in group.listGroupBus[0].listPickup --><!-- ngIf: !$first && group.listGroupBus[0].listPickup.length > 1 --><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup -->
+					<!-- ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus -->
+					<!-- ngIf: false --><!-- end ngRepeat: group in listAll --><tr ng-repeat-start="group in listAll" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="11">
+							<span style="font-size: 14px; font-weight: bold" class="ng-binding">Tuyến 8</span>
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<a title="Click to view detail" ng-click="update(group.listGroupBus[0].id)" class="ng-binding">Đình Nguyên Xá - ĐH Công nghiệp</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							&nbsp;8.1 / 8.5
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<!-- ngRepeat: pickup in group.listGroupBus[0].listPickup --><span ng-repeat="pickup in group.listGroupBus[0].listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold;" class="ng-binding">07:40</span>
+								&nbsp;Đình Nguyên Xá&nbsp;
+							</span><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup --><span ng-repeat="pickup in group.listGroupBus[0].listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold;" class="ng-binding">07:45</span>
+								&nbsp;Đại học Công Nghiệp&nbsp;
+							</span><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:40</span>&nbsp;
+							Đình Nguyên Xá
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Tự túc</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">0</td>
+					</tr>			
+					<!-- ngRepeat: pickup in group.listGroupBus[0].listPickup --><!-- ngIf: !$first && group.listGroupBus[0].listPickup.length > 1 --><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup --><!-- ngIf: !$first && group.listGroupBus[0].listPickup.length > 1 --><tr ng-repeat="pickup in group.listGroupBus[0].listPickup" ng-if="!$first &amp;&amp; group.listGroupBus[0].listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:45</span>&nbsp;
+							Đại học Công Nghiệp
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							Bãi gửi xe Đại học Công nghiệp
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							5000
+						</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus[0].listPickup.length > 1 --><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup -->
+					<!-- ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 --><tr ng-repeat-start="bus in group.listGroupBus" ng-if="!$first &amp;&amp; group.listGroupBus.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="3">
+							<a title="Click to view detail" ng-click="update(bus.id)" class="ng-binding">Phùng - Tân Tây Đô</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="3">
+							&nbsp;8.2
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="3">
+							<!-- ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:40</span>
+								&nbsp;Ngõ 254 Tây Sơn - Cổng sau nhà thi đấu Đan Phượng, Thị Trấn Phùng, Đan Phượng&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:50</span>
+								&nbsp;Tân Tây Đô&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:55</span>
+								&nbsp;Thị trấn Trôi&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="3" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+						 	<span style="color: red; font-weight: bold;" class="ng-binding">07:40</span>&nbsp;
+						 	Ngõ 254 Tây Sơn - Cổng sau nhà thi đấu Đan Phượng, Thị Trấn Phùng, Đan Phượng
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Tự túc</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">0</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><tr ng-repeat="pickup in bus.listPickup" ng-if="!$parent.$first &amp;&amp; !$first &amp;&amp; bus.listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:50</span>&nbsp;
+							Tân Tây Đô
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							Hầm chung cư Tân Tây Đô
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							5000
+						</td>
+					</tr><!-- end ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><tr ng-repeat="pickup in bus.listPickup" ng-if="!$parent.$first &amp;&amp; !$first &amp;&amp; bus.listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:55</span>&nbsp;
+							Thị trấn Trôi
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							tự túc gửi xe.
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							0
+						</td>
+					</tr><!-- end ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 --><tr ng-repeat-start="bus in group.listGroupBus" ng-if="!$first &amp;&amp; group.listGroupBus.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="3">
+							<a title="Click to view detail" ng-click="update(bus.id)" class="ng-binding">ĐH Công nghiệp - Dream town</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="3">
+							&nbsp;8.3
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="3">
+							<!-- ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:45</span>
+								&nbsp;Đại học Công Nghiệp&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:55</span>
+								&nbsp;Cổng OCT2 - khu đô thị Viglacera Xuân Phương&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:57</span>
+								&nbsp;Dream town&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="3" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+						 	<span style="color: red; font-weight: bold;" class="ng-binding">07:45</span>&nbsp;
+						 	Đại học Công Nghiệp
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi gửi xe Đại học Công nghiệp</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><tr ng-repeat="pickup in bus.listPickup" ng-if="!$parent.$first &amp;&amp; !$first &amp;&amp; bus.listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:55</span>&nbsp;
+							Cổng OCT2 - khu đô thị Viglacera Xuân Phương
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							5000
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							0
+						</td>
+					</tr><!-- end ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><tr ng-repeat="pickup in bus.listPickup" ng-if="!$parent.$first &amp;&amp; !$first &amp;&amp; bus.listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:57</span>&nbsp;
+							Dream town
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							Hầm tòa nhà Dream town
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							5000
+						</td>
+					</tr><!-- end ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 --><tr ng-repeat-start="bus in group.listGroupBus" ng-if="!$first &amp;&amp; group.listGroupBus.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<a title="Click to view detail" ng-click="update(bus.id)" class="ng-binding">ĐH Công nghiệp - Trôi</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							&nbsp;8.4
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<!-- ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:45</span>
+								&nbsp;Đại học Công Nghiệp&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:55</span>
+								&nbsp;Thị trấn Trôi&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+						 	<span style="color: red; font-weight: bold;" class="ng-binding">07:45</span>&nbsp;
+						 	Đại học Công Nghiệp
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi gửi xe Đại học Công nghiệp</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><tr ng-repeat="pickup in bus.listPickup" ng-if="!$parent.$first &amp;&amp; !$first &amp;&amp; bus.listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:55</span>&nbsp;
+							Thị trấn Trôi
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							tự túc gửi xe.
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							0
+						</td>
+					</tr><!-- end ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 --><tr ng-repeat-start="bus in group.listGroupBus" ng-if="!$first &amp;&amp; group.listGroupBus.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<a title="Click to view detail" ng-click="update(bus.id)" class="ng-binding">ĐH Công nghiệp</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							&nbsp;8.6 / 8.7
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<!-- ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:45</span>
+								&nbsp;Đại học Công Nghiệp&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+						 	<span style="color: red; font-weight: bold;" class="ng-binding">07:45</span>&nbsp;
+						 	Đại học Công Nghiệp
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi gửi xe Đại học Công nghiệp</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus -->
+					<!-- ngIf: false --><!-- end ngRepeat: group in listAll --><tr ng-repeat-start="group in listAll" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="3">
+							<span style="font-size: 14px; font-weight: bold" class="ng-binding">Tuyến 9</span>
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<a title="Click to view detail" ng-click="update(group.listGroupBus[0].id)" class="ng-binding">Vinmec</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							&nbsp;9.1
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<!-- ngRepeat: pickup in group.listGroupBus[0].listPickup --><span ng-repeat="pickup in group.listGroupBus[0].listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold;" class="ng-binding">07:20</span>
+								&nbsp;Vinmec Time City&nbsp;
+							</span><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:20</span>&nbsp;
+							Vinmec Time City
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi gửi xe Viện dệt may (ngõ 506 Minh Khai)</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr>			
+					<!-- ngRepeat: pickup in group.listGroupBus[0].listPickup --><!-- ngIf: !$first && group.listGroupBus[0].listPickup.length > 1 --><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup -->
+					<!-- ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 --><tr ng-repeat-start="bus in group.listGroupBus" ng-if="!$first &amp;&amp; group.listGroupBus.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<a title="Click to view detail" ng-click="update(bus.id)" class="ng-binding">Đền Lừ - Tam Trinh</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							&nbsp;9.2
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<!-- ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:25</span>
+								&nbsp;KTT Đền Lừ&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup --><span ng-repeat="pickup in bus.listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold; font-size: 12px" class="ng-binding">07:35</span>
+								&nbsp;Đầu ngõ 885 Tam Trinh (Cơ khí Thành Đạt).&nbsp;
+							</span><!-- end ngRepeat: pickup in bus.listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2" class="ng-binding">17:30</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+						 	<span style="color: red; font-weight: bold;" class="ng-binding">07:25</span>&nbsp;
+						 	KTT Đền Lừ
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi gửi xe khu tập thể</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><tr ng-repeat="pickup in bus.listPickup" ng-if="!$parent.$first &amp;&amp; !$first &amp;&amp; bus.listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:35</span>&nbsp;
+							Đầu ngõ 885 Tam Trinh (Cơ khí Thành Đạt).
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							Chung cư Gelexia River side
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							5000
+						</td>
+					</tr><!-- end ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus -->
+					<!-- ngIf: false --><!-- end ngRepeat: group in listAll --><tr ng-repeat-start="group in listAll" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<span style="font-size: 14px; font-weight: bold" class="ng-binding">Tuyến 10</span>
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<a title="Click to view detail" ng-click="update(group.listGroupBus[0].id)" class="ng-binding">Bitexco</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							&nbsp;10.1 / 10.2 / 10.3 / 10.4 / 10.5 / 10.6
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<!-- ngRepeat: pickup in group.listGroupBus[0].listPickup --><span ng-repeat="pickup in group.listGroupBus[0].listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold;" class="ng-binding">08:00</span>
+								&nbsp;Bitexco đường Mễ Trì&nbsp;
+							</span><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1" class="ng-binding">17:40</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">08:00</span>&nbsp;
+							Bitexco đường Mễ Trì
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Gửi xe tự túc các tòa nhà quanh đó</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr>			
+					<!-- ngRepeat: pickup in group.listGroupBus[0].listPickup --><!-- ngIf: !$first && group.listGroupBus[0].listPickup.length > 1 --><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup -->
+					<!-- ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus -->
+					<!-- ngIf: false --><!-- end ngRepeat: group in listAll --><tr ng-repeat-start="group in listAll" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<span style="font-size: 14px; font-weight: bold" class="ng-binding">Tuyến 11</span>
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<a title="Click to view detail" ng-click="update(group.listGroupBus[0].id)" class="ng-binding">Cổng Cung Trí Thức - Cầu Giấy</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							&nbsp;11.1 / 11.2 / 11.3
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="1">
+							<!-- ngRepeat: pickup in group.listGroupBus[0].listPickup --><span ng-repeat="pickup in group.listGroupBus[0].listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold;" class="ng-binding">07:55</span>
+								&nbsp;Cổng Cung trí thức Hà Nội&nbsp;
+							</span><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="1" class="ng-binding">17:40</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:55</span>&nbsp;
+							Cổng Cung trí thức Hà Nội
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Bãi gửi xe cạnh điểm đón</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">10000</td>
+					</tr>			
+					<!-- ngRepeat: pickup in group.listGroupBus[0].listPickup --><!-- ngIf: !$first && group.listGroupBus[0].listPickup.length > 1 --><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup -->
+					<!-- ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus -->
+					<!-- ngIf: false --><!-- end ngRepeat: group in listAll --><tr ng-repeat-start="group in listAll" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<span style="font-size: 14px; font-weight: bold" class="ng-binding">Tuyến 12</span>
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<a title="Click to view detail" ng-click="update(group.listGroupBus[0].id)" class="ng-binding">Dương Đình Nghệ</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							&nbsp;12.1
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<!-- ngRepeat: pickup in group.listGroupBus[0].listPickup --><span ng-repeat="pickup in group.listGroupBus[0].listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold;" class="ng-binding">07:55</span>
+								&nbsp;Gần tòa Star Tower (đường Dương Đình Nghệ rẽ vào)&nbsp;
+							</span><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup --><span ng-repeat="pickup in group.listGroupBus[0].listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold;" class="ng-binding">08:00</span>
+								&nbsp;Bitexco đường Mễ Trì&nbsp;
+							</span><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2" class="ng-binding">17:40</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:55</span>&nbsp;
+							Gần tòa Star Tower (đường Dương Đình Nghệ rẽ vào)
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Hầm tòa nhà Star tower</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr>			
+					<!-- ngRepeat: pickup in group.listGroupBus[0].listPickup --><!-- ngIf: !$first && group.listGroupBus[0].listPickup.length > 1 --><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup --><!-- ngIf: !$first && group.listGroupBus[0].listPickup.length > 1 --><tr ng-repeat="pickup in group.listGroupBus[0].listPickup" ng-if="!$first &amp;&amp; group.listGroupBus[0].listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">08:00</span>&nbsp;
+							Bitexco đường Mễ Trì
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							Gửi xe tự túc các tòa nhà quanh đó
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							5000
+						</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus[0].listPickup.length > 1 --><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup -->
+					<!-- ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus -->
+					<!-- ngIf: false --><!-- end ngRepeat: group in listAll --><tr ng-repeat-start="group in listAll" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<span style="font-size: 14px; font-weight: bold" class="ng-binding">Tuyến 13</span>
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<a title="Click to view detail" ng-click="update(group.listGroupBus[0].id)" class="ng-binding">Vinhomes Smart City Tây Mỗ</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							&nbsp;13.1
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<!-- ngRepeat: pickup in group.listGroupBus[0].listPickup --><span ng-repeat="pickup in group.listGroupBus[0].listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold;" class="ng-binding">08:00</span>
+								&nbsp;Khu đô thị Vinhomes Smart City (Gầm cầu vượt chỗ tòa S2.03)&nbsp;
+							</span><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup --><span ng-repeat="pickup in group.listGroupBus[0].listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold;" class="ng-binding">08:05</span>
+								&nbsp;Song Phương - Đại lộ Thăng Long&nbsp;
+							</span><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2" class="ng-binding">17:40</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">08:00</span>&nbsp;
+							Khu đô thị Vinhomes Smart City (Gầm cầu vượt chỗ tòa S2.03)
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Hầm tòa S2.03</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr>			
+					<!-- ngRepeat: pickup in group.listGroupBus[0].listPickup --><!-- ngIf: !$first && group.listGroupBus[0].listPickup.length > 1 --><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup --><!-- ngIf: !$first && group.listGroupBus[0].listPickup.length > 1 --><tr ng-repeat="pickup in group.listGroupBus[0].listPickup" ng-if="!$first &amp;&amp; group.listGroupBus[0].listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">08:05</span>&nbsp;
+							Song Phương - Đại lộ Thăng Long
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							Tự túc gửi xe nhà dân
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							0
+						</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus[0].listPickup.length > 1 --><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup -->
+					<!-- ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus -->
+					<!-- ngIf: false --><!-- end ngRepeat: group in listAll --><tr ng-repeat-start="group in listAll" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<span style="font-size: 14px; font-weight: bold" class="ng-binding">Tuyến 14</span>
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<a title="Click to view detail" ng-click="update(group.listGroupBus[0].id)" class="ng-binding">Nguyễn Chánh - Nam Trung Yên</a>
+						</td>
+						<td class="text ng-binding" style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							&nbsp;14.1
+						</td>
+						
+						<td style="vertical-align: middle;border: 0.5pt solid black" rowspan="2">
+							<!-- ngRepeat: pickup in group.listGroupBus[0].listPickup --><span ng-repeat="pickup in group.listGroupBus[0].listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->
+								<!-- ngIf: !$first -->
+								<span style="color: red; font-weight: bold;" class="ng-binding">07:55</span>
+								&nbsp;Nguyễn Chánh - Nam Trung Yên&nbsp;
+							</span><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup --><span ng-repeat="pickup in group.listGroupBus[0].listPickup" style="font-size: 12px" class="ng-binding ng-scope">
+								<!-- ngIf: !$first -->-><!-- end ngIf: !$first -->
+								<!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope">&nbsp;</span><!-- end ngIf: !$first -->
+								<span style="color: red; font-weight: bold;" class="ng-binding">08:05</span>
+								&nbsp;Bitexco đường Mễ Trì&nbsp;
+							</span><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup -->
+						</td>
+						<td style="text-align: left;vertical-align: middle;border: 0.5pt solid black" rowspan="2" class="ng-binding">17:40</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">07:55</span>&nbsp;
+							Nguyễn Chánh - Nam Trung Yên
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">Hầm tòa nhà A14A1</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">5000</td>
+					</tr>			
+					<!-- ngRepeat: pickup in group.listGroupBus[0].listPickup --><!-- ngIf: !$first && group.listGroupBus[0].listPickup.length > 1 --><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup --><!-- ngIf: !$first && group.listGroupBus[0].listPickup.length > 1 --><tr ng-repeat="pickup in group.listGroupBus[0].listPickup" ng-if="!$first &amp;&amp; group.listGroupBus[0].listPickup.length > 1" class="ng-scope">
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							<span style="color: red; font-weight: bold;" class="ng-binding">08:05</span>&nbsp;
+							Bitexco đường Mễ Trì
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							Gửi xe tự túc các tòa nhà quanh đó
+						</td>
+						<td style="vertical-align: middle;border: 0.5pt solid black" class="ng-binding">
+							5000
+						</td>
+					</tr><!-- end ngIf: !$first && group.listGroupBus[0].listPickup.length > 1 --><!-- end ngRepeat: pickup in group.listGroupBus[0].listPickup -->
+					<!-- ngRepeat: bus in group.listGroupBus --><!-- ngIf: !$first && group.listGroupBus.length > 1 -->
+					<!-- ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup --><!-- ngIf: !$parent.$first && !$first && bus.listPickup.length > 1 --><!-- end ngRepeat: pickup in bus.listPickup -->
+					<!-- ngIf: false --><!-- end ngRepeat: bus in group.listGroupBus -->
+					<!-- ngIf: false --><!-- end ngRepeat: group in listAll -->
+				</tbody>
+			</table>
